@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторна №6 — CSS анімація</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scene run">
+  <div class="sky"></div>
+  <div class="hills"></div>
+  <div class="pokemon"></div>
+</div>
+
+<button id="toggle">Стоп</button>
+
+<script>
+  const btn = document.getElementById('toggle');
+  const scene = document.querySelector('.scene');
+
+  btn.onclick = () => {
+    scene.classList.toggle('run');
+    btn.textContent = scene.classList.contains('run') ? 'Стоп' : 'Старт';
+  };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #87ceeb;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sky {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: url("img/bg-sky.png") repeat-x;
+  animation: skyMove 60s linear infinite;
+}
+
+.hills {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 300px;
+  background: url("img/bg-hills.png") repeat-x;
+  animation: hillsMove 20s linear infinite;
+}
+
+.pokemon {
+  position: absolute;
+  bottom: 120px;
+  left: 100px;
+  width: 96px;
+  height: 96px;
+  background: url("img/pikachu.png") no-repeat;
+  animation: run 1s steps(4) infinite;
+}
+
+@keyframes skyMove {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes hillsMove {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes run {
+  from { background-position: 0 0; }
+  to   { background-position: -384px 0; }
+}
+
+button {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  padding: 12px 20px;
+  font-size: 16px;
+  background: #ff6464;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
